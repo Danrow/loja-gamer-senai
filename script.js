@@ -1,3 +1,20 @@
+// Permite clicar no card para focar no input
+
+document.getElementById("PC_GAMER_div1").addEventListener("click", function(){document.getElementById("PC_GAMER_1").focus();}); 
+document.getElementById("PC_GAMER_div2").addEventListener("click", function(){document.getElementById("PC_GAMER_2").focus();});  
+document.getElementById("PC_GAMER_div3").addEventListener("click", function(){document.getElementById("PC_GAMER_3").focus();});  
+document.getElementById("PC_GAMER_div4").addEventListener("click", function(){document.getElementById("PC_GAMER_4").focus();}); 
+document.getElementById("Monitor_GAMER_div1").addEventListener("click", function(){document.getElementById("Monitor_GAMER_1").focus();}); 
+document.getElementById("Monitor_GAMER_div2").addEventListener("click", function(){document.getElementById("Monitor_GAMER_2").focus();});  
+document.getElementById("Monitor_GAMER_div3").addEventListener("click", function(){document.getElementById("Monitor_GAMER_3").focus();});  
+document.getElementById("Monitor_GAMER_div4").addEventListener("click", function(){document.getElementById("Monitor_GAMER_4").focus();});  
+document.getElementById("GAME_div1").addEventListener("click", function(){document.getElementById("GAME_1").focus();}); 
+document.getElementById("GAME_div2").addEventListener("click", function(){document.getElementById("GAME_2").focus();});  
+document.getElementById("GAME_div3").addEventListener("click", function(){document.getElementById("GAME_3").focus();});  
+document.getElementById("GAME_div4").addEventListener("click", function(){document.getElementById("GAME_4").focus();}); 
+
+// Limpa todos os campos
+
 function limparPedido(){
     document.getElementById("PC_GAMER_1").value = 0;
     document.getElementById("PC_GAMER_2").value = 0;
@@ -7,15 +24,14 @@ function limparPedido(){
     document.getElementById("Monitor_GAMER_2").value = 0;
     document.getElementById("Monitor_GAMER_3").value = 0;
     document.getElementById("Monitor_GAMER_4").value = 0;
-    document.getElementById("GTA_6_PS5").value = 0;
-    document.getElementById("GOT_EP_PS4").value = 0;
-    document.getElementById("GOW_Ragnarok_ES_PS4").value = 0;
-    document.getElementById("Bloodborne_Hits_PS4").value = 0;
+    document.getElementById("GAME_1").value = 0;
+    document.getElementById("GAME_2").value = 0;
+    document.getElementById("GAME_3").value = 0;
+    document.getElementById("GAME_4").value = 0;
 
     document.getElementById("resumo").textContent ="";
 
 }
-
 
 function calcularPedido() {
 
@@ -62,20 +78,20 @@ function calcularPedido() {
     // ==========================================
     // 1. Games
     // ==========================================
-    let GTA_6_PS5 = Number(
-        document.getElementById("GTA_6_PS5").value
+    let GAME_1 = Number(
+        document.getElementById("GAME_1").value
     );
 
-    let GOT_EP_PS4 = Number(
-        document.getElementById("GOT_EP_PS4").value
+    let GAME_2 = Number(
+        document.getElementById("GAME_2").value
     );
 
-    let GOW_Ragnarok_ES_PS4 = Number(
-        document.getElementById("GOW_Ragnarok_ES_PS4").value
+    let GAME_3 = Number(
+        document.getElementById("GAME_3").value
     );
 
-    let Bloodborne_Hits_PS4 = Number(
-        document.getElementById("Bloodborne_Hits_PS4").value
+    let GAME_4 = Number(
+        document.getElementById("GAME_4").value
     );
 
     // ==========================================
@@ -92,10 +108,10 @@ function calcularPedido() {
         Monitor_GAMER_2,
         Monitor_GAMER_3,
         Monitor_GAMER_4,
-        GTA_6_PS5,
-        GOT_EP_PS4,
-        GOW_Ragnarok_ES_PS4,
-        Bloodborne_Hits_PS4
+        GAME_1,
+        GAME_2,
+        GAME_3,
+        GAME_4
     ];
 
     // Verifica se existe alguma quantidade inválida
@@ -123,10 +139,10 @@ function calcularPedido() {
         (Monitor_GAMER_2 * 692.00) +
         (Monitor_GAMER_3 * 967.98) +
         (Monitor_GAMER_4 * 989.10) +
-        (GTA_6_PS5 * 418.41) +
-        (GOT_EP_PS4 * 55.71) +
-        (GOW_Ragnarok_ES_PS4 * 106.86) +
-        (Bloodborne_Hits_PS4 * 55.71);
+        (GAME_1 * 418.41) +
+        (GAME_2 * 55.71) +
+        (GAME_3 * 106.86) +
+        (GAME_4 * 55.71);
 
 
     // ==========================================
@@ -220,42 +236,42 @@ function calcularPedido() {
 
     }
 
-    // GTA_6_PS5
-    if (GTA_6_PS5 > 0) {
+    // GAME_1
+    if (GAME_1 > 0) {
 
-        resumo += GTA_6_PS5
-            + " x GTA_6_PS5 — R$ "
-            + (GTA_6_PS5 * 418.41).toFixed(2)
+        resumo += GAME_1
+            + " x GAME_1 — R$ "
+            + (GAME_1 * 418.41).toFixed(2)
             + "\n";
 
     }
 
-    // GOT_EP_PS4
-    if (GOT_EP_PS4 > 0) {
+    // GAME_2
+    if (GAME_2 > 0) {
 
-        resumo += GOT_EP_PS4
-            + " x GOT_EP_PS4 — R$ "
-            + (GOT_EP_PS4 * 55.71).toFixed(2)
+        resumo += GAME_2
+            + " x GAME_2 — R$ "
+            + (GAME_2 * 55.71).toFixed(2)
             + "\n";
 
     }
 
-    // GOW_Ragnarok_ES_PS4
-    if (GOW_Ragnarok_ES_PS4 > 0) {
+    // GAME_3
+    if (GAME_3 > 0) {
 
-        resumo += GOW_Ragnarok_ES_PS4
-            + " x GOW_Ragnarok_ES_PS4 — R$ "
-            + (GOW_Ragnarok_ES_PS4 * 106.86).toFixed(2)
+        resumo += GAME_3
+            + " x GAME_3 — R$ "
+            + (GAME_3 * 106.86).toFixed(2)
             + "\n";
 
     }
 
-    // Bloodborne_Hits_PS4
-    if (Bloodborne_Hits_PS4 > 0) {
+    // GAME_4
+    if (GAME_4 > 0) {
 
-        resumo += Bloodborne_Hits_PS4
-            + " x Bloodborne_Hits_PS4 — R$ "
-            + (Bloodborne_Hits_PS4 * 55.71).toFixed(2)
+        resumo += GAME_4
+            + " x GAME_4 — R$ "
+            + (GAME_4 * 55.71).toFixed(2)
             + "\n";
 
     }
@@ -296,4 +312,4 @@ function enviarPedido(){
     } else {
         window.open("https://wa.me/5521967710158?text=" + encodeURIComponent(pedido));
     }
-}
+} 

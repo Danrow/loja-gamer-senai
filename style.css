@@ -59,7 +59,7 @@ header h1 {
     font-size: 28px;
 }
 
-/* O cardápio fica à esquerda e o pedido à direita. */
+/* Os produtos fica à esquerda e o pedido à direita. */
 main {
     width: 100%;
     max-width: 1700px;
@@ -84,16 +84,18 @@ main {
     margin-top: 22px;
 }
 
-/* Quatro lanches na primeira linha. */
-.PC_GAMER, .MONITORES, .GAMES {
+/* Quatro PC_GAMER e MONITORES na primeira linha. */
+.PC_GAMER, .MONITORES {
     display: grid;
     grid-template-columns: repeat(4, minmax(0, 1fr));
     gap: 14px;
 }
 
-/* Três bebidas na segunda linha. */
-.PC_GAMER:last-child, .MONITORES:last-child, .GAMES  {
+/* Três jogos por linha. */
+.GAMES  {
+    display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 14px;
 }
 
 .produto {
@@ -101,6 +103,10 @@ main {
     border-radius: 10px;
     padding: 15px;
     box-shadow: 0 2px 8px #00000012;
+}
+.produto:hover {
+    transition: transform 0.1s;
+    transform: scale(1.05);
 }
 
 /* contain mantém a imagem inteira, sem cortar. */
@@ -217,11 +223,11 @@ footer {
         grid-template-columns: minmax(0, 1fr) 240px;
     }
 
-    .cardapio {
+    .PC_GAMER, .MONITORES {
         grid-template-columns: repeat(2, minmax(0, 1fr));
     }
 
-    .cardapio:last-child {
+    .PC_GAMER:last-child, .MONITORES:last-child {
         grid-template-columns: repeat(3, minmax(0, 1fr));
     }
 }
@@ -236,11 +242,22 @@ footer {
         margin-top: 0;
     }
 
-    .cardapio:last-child {
+    .PC_GAMER:last-child, .MONITORES:last-child {
         grid-template-columns: repeat(2, minmax(0, 1fr));
     }
 
     main {
         padding: 12px;
+    }
+}
+
+@media (max-width: 375px) {
+
+    .PC_GAMER h3, .MONITORES h3, .GAMES h3 {
+        overflow: hidden;
+        max-height: 100px;
+    }
+    .GAMES:last-child {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
     }
 }

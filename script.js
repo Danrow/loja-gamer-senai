@@ -1,36 +1,52 @@
-// Permite clicar no card para focar no input
+// Permite clicar nos cards de PC_GAMER para focar no input
+for (let i = 1; i < 5; i++) {
+    document.getElementById("PC_GAMER_div"+i).addEventListener("click", function() {
+        var input = document.getElementById("PC_GAMER_"+i);
+        input.focus();
+        if (input.value === "0") input.value = "";
+    });
+    document.getElementById("PC_GAMER_"+i).addEventListener("blur", function() {
+        if (this.value === "") this.value = "0";
+    });
+    
+}
+// Permite clicar nos cards de Monitor_GAMER para focar no input
+for (let i = 1; i < 5; i++) {
+    document.getElementById("Monitor_GAMER_div"+i).addEventListener("click", function() {
+        var input = document.getElementById("Monitor_GAMER_"+i);
+        input.focus();
+        if (input.value === "0") input.value = "";
+    });
+    document.getElementById("Monitor_GAMER_"+i).addEventListener("blur", function() {
+        if (this.value === "") this.value = "0";
+    });
+}
+// Permite clicar nos cards de GAMES para focar no input
+for (let i = 1; i < 5; i++) {
+    document.getElementById("GAME_div"+i).addEventListener("click", function() {
+        var input = document.getElementById("GAME_"+i);
+        input.focus();
+        if (input.value === "0") input.value = "";
+    });
+    document.getElementById("GAME_"+i).addEventListener("blur", function() {
+        if (this.value === "") this.value = "0";
+    });
+}
 
-document.getElementById("PC_GAMER_div1").addEventListener("click", function(){document.getElementById("PC_GAMER_1").focus();}); 
-document.getElementById("PC_GAMER_div2").addEventListener("click", function(){document.getElementById("PC_GAMER_2").focus();});  
-document.getElementById("PC_GAMER_div3").addEventListener("click", function(){document.getElementById("PC_GAMER_3").focus();});  
-document.getElementById("PC_GAMER_div4").addEventListener("click", function(){document.getElementById("PC_GAMER_4").focus();}); 
-document.getElementById("Monitor_GAMER_div1").addEventListener("click", function(){document.getElementById("Monitor_GAMER_1").focus();}); 
-document.getElementById("Monitor_GAMER_div2").addEventListener("click", function(){document.getElementById("Monitor_GAMER_2").focus();});  
-document.getElementById("Monitor_GAMER_div3").addEventListener("click", function(){document.getElementById("Monitor_GAMER_3").focus();});  
-document.getElementById("Monitor_GAMER_div4").addEventListener("click", function(){document.getElementById("Monitor_GAMER_4").focus();});  
-document.getElementById("GAME_div1").addEventListener("click", function(){document.getElementById("GAME_1").focus();}); 
-document.getElementById("GAME_div2").addEventListener("click", function(){document.getElementById("GAME_2").focus();});  
-document.getElementById("GAME_div3").addEventListener("click", function(){document.getElementById("GAME_3").focus();});  
-document.getElementById("GAME_div4").addEventListener("click", function(){document.getElementById("GAME_4").focus();}); 
 
 // Limpa todos os campos
 
 function limparPedido(){
-    document.getElementById("PC_GAMER_1").value = 0;
-    document.getElementById("PC_GAMER_2").value = 0;
-    document.getElementById("PC_GAMER_3").value = 0;
-    document.getElementById("PC_GAMER_4").value = 0;
-    document.getElementById("Monitor_GAMER_1").value = 0;
-    document.getElementById("Monitor_GAMER_2").value = 0;
-    document.getElementById("Monitor_GAMER_3").value = 0;
-    document.getElementById("Monitor_GAMER_4").value = 0;
-    document.getElementById("GAME_1").value = 0;
-    document.getElementById("GAME_2").value = 0;
-    document.getElementById("GAME_3").value = 0;
-    document.getElementById("GAME_4").value = 0;
-
+    for (let i = 1; i < 5; i++) {
+        document.getElementById("PC_GAMER_"+i).value = 0;
+    }
+    for (let i = 1; i < 5; i++) {
+        document.getElementById("Monitor_GAMER_"+i).value = 0;
+    }
+    for (let i = 1; i < 5; i++) {
+        document.getElementById("GAME_"+i).value = 0;
+    }
     document.getElementById("resumo").textContent ="";
-
 }
 
 function calcularPedido() {

@@ -287,3 +287,12 @@ function calcularPedido() {
     document.getElementById("resumo").textContent = resumo;
 
 }
+
+function enviarPedido(){
+    let pedido = document.getElementById("resumo").textContent
+    if (pedido === ""){
+        alert("Não a nenhum pedido!")
+    } else {
+        window.open("https://wa.me/5521967710158?text=" + encodeURIComponent(pedido));
+    }
+}

@@ -198,6 +198,15 @@ button:hover {
     background-color: darkgrey;
 }
 
+.btn-whatsapp{
+    background-color: #22970e;
+    margin-top: 10px;
+}
+
+.btn-whatsapp:hover{
+    background-color: #0b3304;
+}
+
 footer {
     font-size: 12px;
 }

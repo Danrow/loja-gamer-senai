@@ -256,7 +256,7 @@ function calcularPedido() {
     if (GAME_1 > 0) {
 
         resumo += GAME_1
-            + " x GAME_1 — R$ "
+            + " x GTA 6 - PS5 — R$ "
             + (GAME_1 * 418.41).toFixed(2)
             + "\n";
 
@@ -266,7 +266,7 @@ function calcularPedido() {
     if (GAME_2 > 0) {
 
         resumo += GAME_2
-            + " x GAME_2 — R$ "
+            + " x Ghost Of Tsushima - EP - PS4 — R$ "
             + (GAME_2 * 55.71).toFixed(2)
             + "\n";
 
@@ -276,7 +276,7 @@ function calcularPedido() {
     if (GAME_3 > 0) {
 
         resumo += GAME_3
-            + " x GAME_3 — R$ "
+            + " x God of War Ragnarök - ES - PS4 — R$ "
             + (GAME_3 * 106.86).toFixed(2)
             + "\n";
 
@@ -286,7 +286,7 @@ function calcularPedido() {
     if (GAME_4 > 0) {
 
         resumo += GAME_4
-            + " x GAME_4 — R$ "
+            + " x Bloodborne Hits - PS4 — R$ "
             + (GAME_4 * 55.71).toFixed(2)
             + "\n";
 

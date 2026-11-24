@@ -290,7 +290,8 @@ function calcularPedido() {
 
 function enviarPedido(){
     let pedido = document.getElementById("resumo").textContent
-    if (pedido === ""){
+    if ((pedido === "") || (pedido === "Nenhum produto selecionado.\n\nTOTAL: R$ 0,00"))
+    {
         alert("Não a nenhum pedido!")
     } else {
         window.open("https://wa.me/5521967710158?text=" + encodeURIComponent(pedido));
